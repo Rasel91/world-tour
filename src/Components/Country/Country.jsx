@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 
-const Country = ({ country }) => {
+const Country = ({ country, handleVisitedCountries }) => {
 
     const { name, flags, region, population, area } = country;
 
@@ -19,6 +19,10 @@ const Country = ({ country }) => {
             <h5>Population: {population}</h5>
             <p>Area: {area}</p>
             <p>Region: {region}</p>
+            {/* যাতে বাববার রিপিট না হয় তার জন্য () => handleVisitedCountries() লিখতে হবে */}
+            <button onClick={() => handleVisitedCountries(country)}>Mark Visited</button>
+            <br />
+            <br />
             {/*  Toggle Area button */}
             <button style={{ backgroundColor: visited ? 'yellow' : 'white' }} onClick={handleVisited}>{visited ? 'Visited' : 'Going'}</button>
 
